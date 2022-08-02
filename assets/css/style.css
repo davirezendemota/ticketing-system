@@ -82,5 +82,8 @@ input[type=submit] {
     width: 50%;
     cursor: pointer;
 }
+form a {
+    text-align: center;
+}
 
 
