@@ -13,5 +13,7 @@ In this project i`ll use web basics to practice my HTML, CSS and JAVASCRIPT codi
 https://www.youtube.com/watch?v=WYufSGgaCZ8
 
 
-
-
+### FULL PLAYLIST
+https://www.youtube.com/playlist?list=PLbnAsJ6zlids-RjpuHaX6Kj0hY6hx71Qj
+## TASKS
+[] how send multiple parameters in POST method

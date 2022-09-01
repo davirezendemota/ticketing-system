@@ -72,7 +72,7 @@ textarea {
     color: var(--white);
     opacity: .7;
 }
-input[type=submit] {
+.form__btn{
     height: 2rem;
     border-radius: 5px;
     border: none;

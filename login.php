@@ -56,7 +56,7 @@ use LDAP\Result;
                     <input type="text" class="field" name="user_name" placeholder="Username" required>
                     <input type="password" class="field" name="password" placeholder="Password" required>
 
-                    <input type="submit" value="Login">
+                    <input type="submit" class="form__btn" value="Login">
                     <a href="signup.php">Click to Signup</a>
                 </form>
             </div>
