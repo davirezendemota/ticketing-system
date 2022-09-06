@@ -16,4 +16,8 @@ https://www.youtube.com/watch?v=WYufSGgaCZ8
 ### FULL PLAYLIST
 https://www.youtube.com/playlist?list=PLbnAsJ6zlids-RjpuHaX6Kj0hY6hx71Qj
 ## TASKS
+[] see all the tasks in index page
 [] how send multiple parameters in POST method
+
+### LINKS 
+https://programadoresdepre.com.br/sistema-de-login-com-php-e-mysql-pdo/
