@@ -1,12 +1,3 @@
-<?php
-    session_start();
-
-    include("connection.php");
-    include("functions.php");
-    
-    $user_data = check_login($con);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +14,7 @@
 <body class="flex-col justify-center align-center">
         <div class="flex-col align-center">
             <h3>Index</h3>
-            <h3>Hello, <?= $user_data['user_name']?></h3>
-            <a href="logout.php">Logout</a>
+            <h3>Hello!</h3>
         </div>
         <br>
         <div class="flex-col align-center">
