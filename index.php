@@ -1,3 +1,4 @@
+<?php include_once "assets/php/connection.php"?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,10 +18,10 @@
         </header>
         <main class="main">
             <div class="container__ticket">
-                <form class="form" method="POST" action="assets/php/ajax.php" enctype="application/x-www-form-urlencoded">
-                    <input type="text" class="field form__task__name" name="ticket_name" placeholder="Ticket name...">
-                    <input type="text" class="field form__task__description" name="ticket_description" placeholder="Ticket description...">
-                    <input type="submit" class="form__btn" value="Send">
+                <form class="form" method="POST" action="assets/php/connection.php">
+                    <input name="title" type="text" class="field"  placeholder="Ticket name...">
+                    <input name="description" type="text" class="field" placeholder="Ticket description...">
+                    <input type="submit" class="form__btn" value="Submit">
                 </form>
                 <div class="group__ticket">
                     <table class="ticket__table">
@@ -78,6 +79,7 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="ticket__status"><?= $status ?></div>
             </div>
         </main>
         <footer>

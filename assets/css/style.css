@@ -138,3 +138,16 @@ form a {
     color: var(--white);
 }
 /* TABELA =================== */
+.cnx-status{
+    width: 100%;
+    text-align: center;
+}
+.cnx-status[data-status="on"]{
+    background-color: green;
+}
+.cnx-status[data-status="off"]{
+    background-color: red;
+}
+.ticket__status{
+    text-align: center;
+}
