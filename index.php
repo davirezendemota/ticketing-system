@@ -1,4 +1,4 @@
-<?php include_once "assets/php/connection.php"?>
+<?php include 'assets/php/includes/class-autoload.inc.php' ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +18,7 @@
         </header>
         <main class="main">
             <div class="container__ticket">
-                <form class="form" method="POST" action="assets/php/connection.php">
+                <form class="form" method="POST" action="">
                     <input name="title" type="text" class="field"  placeholder="Ticket name...">
                     <input name="description" type="text" class="field" placeholder="Ticket description...">
                     <input type="submit" class="form__btn" value="Submit">
@@ -31,55 +31,13 @@
                             <th>Description</td>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>#1</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#2</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#3</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#4</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#5</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#6</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#7</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#8</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
-                            <tr>
-                                <td>#9</td>
-                                <td>Some Name</td>
-                                <td>Some description</td>
-                            </tr>
+                            <?php
+                                $ticket = new Ticket();
+                                $ticket->getTickets();
+                            ?>
                         </tbody>
                     </table>
                 </div>
-                <div class="ticket__status"><?= $status ?></div>
             </div>
         </main>
         <footer>
