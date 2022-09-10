@@ -1,4 +1,7 @@
-<?php include 'assets/php/includes/class-autoload.inc.php' ?>
+<?php 
+    include 'assets/php/includes/class-autoload.inc.php';
+    $ticket = new Ticket();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,24 +21,18 @@
         </header>
         <main class="main">
             <div class="container__ticket">
-                <form class="form" method="POST" action="">
-                    <input name="title" type="text" class="field"  placeholder="Ticket name...">
-                    <input name="description" type="text" class="field" placeholder="Ticket description...">
-                    <input type="submit" class="form__btn" value="Submit">
+                <form class="form form__ticket" method="POST" action="">
+                    <input name="title" type="text" class="field form__ticket__name"  placeholder="Ticket name...">
+                    <input name="description" type="text" class="field form__ticket__desc" placeholder="Ticket description...">
+                    <input type="submit" class="form__ticket__btn" value="Submit">
                 </form>
                 <div class="group__ticket">
                     <table class="ticket__table">
                         <thead>
-                            <th>ID</td>
                             <th>Name</td>
                             <th>Description</td>
                         </thead>
-                        <tbody>
-                            <?php
-                                $ticket = new Ticket();
-                                $ticket->getTickets();
-                            ?>
-                        </tbody>
+                        <tbody class="ticket__table__body"><?= $ticket->getTickets() ?></tbody>
                     </table>
                 </div>
             </div>

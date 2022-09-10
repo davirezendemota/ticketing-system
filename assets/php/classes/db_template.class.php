@@ -6,7 +6,7 @@ class Db {
     private $databaseName = "";
     private $username = "";
     private $password = "";
-
+    
     protected function connect(){
         try {
             $dsn = "mysql:host={$this->host};dbname={$this->databaseName}";
@@ -17,5 +17,10 @@ class Db {
         }catch (PDOException $err){
             echo '<div data-status="off" class="cnx-status">DB Connection Failed:' . $err->getMessage() . '</div>';
         }
+    }
+    // FULL PATH OF URL
+    function getUrl(){
+        $url = '';
+        return $url;
     }
 }

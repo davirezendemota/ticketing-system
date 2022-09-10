@@ -1,29 +1,37 @@
-const formTask = document.querySelector(".form__task");
-const formTaskName = formTask.querySelector(".form__task__name");
-const formTaskDesc = formTask.querySelector(".form__task__description");
-const btnFormTask = formTask.querySelector(".form__btn");
+// FORM
+const formTicket = document.querySelector(".form__ticket");
+const formTicketTitle = formTicket.querySelector(".form__ticket__name");
+const formTicketDesc = formTicket.querySelector(".form__ticket__desc");
+const formTicketBtn = formTicket.querySelector(".form__ticket__btn");
+// TABLE
+const TicketTable = document.querySelector(".ticket__table");
+const TicketTableBody = TicketTable.querySelector(".ticket__table__body");
 
-// console.log(formTask);
-// console.log(formTaskName);
-//console.log(formTaskDesc);
-// console.log(btnFormTask);
+// console.log(formTicket);
+// console.log(formTicketName);
+// console.log(formTicketDesc);
+// console.log(formTicketBtn);
 
 // SEND AJAX FORM
-function sendForm(e) {
+function setTicket(e) {
     e.preventDefault();
 
-    let name = formTaskName.value;
-    let description = formTaskDesc.value;
+    let title = formTicketTitle.value;
+    let description = formTicketDesc.value;
     
     let ajax = new XMLHttpRequest();
-    let params = `name=${name}&description=${description}`;
+    let params = `title=${title}&description=${description}&funcao=setTicket`;
 
-    ajax.open("POST", "assets/php/ajax.php");
+    ajax.open("POST", "ajax.php");
     // HEADER 
     ajax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
     ajax.onreadystatechange = () => {
         if(ajax.readyState === 4 && ajax.status === 200){
-            console.log(ajax.responseText);
+            // console.log(ajax.responseText);
+            let ajaxReturn = JSON.parse(ajax.responseText);
+            //console.log(data);
+            TicketTableBody.innerHTML += ajaxReturn.data;
+            alert(ajaxReturn.message);
         } else {
             //console.log(ajax.responseText);
         }
@@ -32,22 +40,6 @@ function sendForm(e) {
     ajax.send(params);
 }
 
-// function deletaAnexo(id){
-//     //AJAX
-//     var ajax = new XMLHttpRequest();
-//     ajax.open("POST", '<?= $url ?>/ajax.php', true);
-//     ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//     ajax.send("id="+id+"&funcao=deletaAnexo");
-//     ajax.onreadystatechange = function() {
-//         if (ajax.readyState == 4 && ajax.status == 200) {
-//             //let data = JSON.parse(ajax.responseText);  
-//             //Decrementa valor total
-//             document.getElementById('totalAnexos').innerHTML = document.getElementById('totalAnexos').innerHTML - 1;                  
-//         } else {
-//             console.log(ajax.responseText);
-//         }
-//     }
-// }
 
 
-formTask.addEventListener('submit', sendForm, false);
+formTicket.addEventListener('submit', setTicket, false);
