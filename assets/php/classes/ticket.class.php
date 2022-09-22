@@ -11,9 +11,10 @@ class Ticket extends Db{
         // LOOP TO SEND EVERY ROW IN TABLE
         while($row = $stmt->fetch()){
             echo "
-            <tr>
+            <tr data-id=\"{$row['id']}\">
                 <td>{$row['title']}</td>
                 <td>{$row['description']}</td>
+                <td><i class=\"ticket__item_delete fa-solid fa-trash-can\"></i></td>
             </tr>
             ";
         }
@@ -27,12 +28,26 @@ class Ticket extends Db{
         $stmt->execute([$title, $description]);
 
         $return['message'] = "Ticket was sent!";
-        $return['data'] = "
+        $return['data'] = '
             <tr>
-                <td>{$title}</td>
-                <td>{$description}</td>
+                <td>'.$title.'</td>
+                <td>'.$description.'</td>
+                <td><i class="ticket__item_delete fa-solid fa-trash-can"></i></td>
             </tr>
-        ";
+        ';
+
+        return $return;
+    }
+
+    public function deleteTicket($id){
+        //SQL COMMAND
+
+        $sql= "DELETE FROM ticket WHERE id=:id";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $return['message'] = "Ticket was deleted!";
 
         return $return;
     }

@@ -3,7 +3,7 @@
     include 'assets/php/classes/db.class.php';
     include 'assets/php/classes/ticket.class.php';
     /* includes */
-    
+
     $ticket = new Ticket();
 ?>
 <!DOCTYPE html>
@@ -14,6 +14,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <script src="assets/js/script.js" defer></script>
+        <!-- FONT AWESOME  -->
+        <script src="https://kit.fontawesome.com/d5096ac29d.js" crossorigin="anonymous" defer></script>
         <!-- FAVICON  -->
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
         <!-- TITLE -->
@@ -35,6 +37,7 @@
                         <thead>
                             <th>Name</td>
                             <th>Description</td>
+                            <th>Options</td>
                         </thead>
                         <tbody class="ticket__table__body"><?= $ticket->getTickets() ?></tbody>
                     </table>
