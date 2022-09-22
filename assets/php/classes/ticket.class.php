@@ -1,5 +1,6 @@
 <?php
 
+
 class Ticket extends Db{
 
     public function getTickets(){

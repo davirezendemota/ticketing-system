@@ -1,5 +1,9 @@
 <?php 
-    include 'assets/php/includes/class-autoload.inc.php';
+    /* includes */
+    include 'assets/php/classes/db.class.php';
+    include 'assets/php/classes/ticket.class.php';
+    /* includes */
+    
     $ticket = new Ticket();
 ?>
 <!DOCTYPE html>

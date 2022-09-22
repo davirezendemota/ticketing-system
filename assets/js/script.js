@@ -22,7 +22,7 @@ function setTicket(e) {
     let ajax = new XMLHttpRequest();
     let params = `title=${title}&description=${description}&funcao=setTicket`;
 
-    ajax.open("POST", "ajax.php");
+    ajax.open("POST", "assets/php/ajax.php");
     // HEADER 
     ajax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
     ajax.onreadystatechange = () => {
